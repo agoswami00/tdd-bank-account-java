@@ -20,9 +20,19 @@ public class AccountTest {
         acc.deposit(100.50);
         Double finalBalance = acc.getBalance();
 
-        Double balanceIncrease = finalBalance - initialBalance;
-        assertThat(balanceIncrease.equals(100.50));
+        Double balanceDiff = finalBalance - initialBalance;
+        assertThat(balanceDiff.equals(100.50));
     }
 
+    @Test
+    public void withdrawAnAmountToDecreaseTheBalance() {
+        Account acc = new Account();
+        Double initialBalance = acc.getBalance();
+        acc.withdraw(100.50);
+        Double finalBalance = acc.getBalance();
+
+        Double balanceDiff = initialBalance - finalBalance;
+        assertThat(balanceDiff.equals(100.50));
+    }
 
 }
