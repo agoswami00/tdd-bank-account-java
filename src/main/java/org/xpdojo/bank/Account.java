@@ -8,7 +8,10 @@ public class Account {
     }
 
     public Double deposit(Double amount){
-        return balance += amount;
+        if(amount > 0)
+            return balance += amount;
+        else
+            return balance;
     }
 
     public Double withdraw(Double amount){

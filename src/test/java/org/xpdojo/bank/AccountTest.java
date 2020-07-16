@@ -1,6 +1,5 @@
 package org.xpdojo.bank;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -23,6 +22,17 @@ public class AccountTest {
         Double balanceDiff = finalBalance - initialBalance;
         assertThat(balanceDiff.equals(100.50));
     }
+
+    @Test
+    public void depositingNegativeAmountIsNotAllowed() {
+        Account acc = new Account();
+        Double initialBalance = acc.getBalance();
+        acc.deposit(-100.50);
+        Double finalBalance = acc.getBalance();
+
+        assertThat(finalBalance.equals(initialBalance));
+    }
+
 
     @Test
     public void withdrawAnAmountToDecreaseTheBalance() {
