@@ -14,8 +14,9 @@ public class AccountTest {
     }
 
     @Test
-    @Disabled
     public void depositAnAmountToIncreaseTheBalance() {
-        assertThat("your first test").isBlank();
+        Account acc = new Account();
+        acc.deposit(100.0);
+        assertThat(acc.getBalance().equals(0));
     }
 }

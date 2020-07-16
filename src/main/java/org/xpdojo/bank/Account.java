@@ -1,7 +1,15 @@
 package org.xpdojo.bank;
 
 public class Account {
-    public Integer getBalance(){
-        return 0;
+    Double balance = 0.0;
+
+    public Double getBalance(){
+        return 0.0;
     }
+
+    public Double deposit(Double amount){
+        return amount;
+    }
+
+
 }
