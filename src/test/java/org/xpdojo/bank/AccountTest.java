@@ -16,7 +16,7 @@ public class AccountTest {
     @Test
     public void depositAnAmountToIncreaseTheBalance() {
         Account acc = new Account();
-        acc.deposit(100.0);
-        assertThat(acc.getBalance().equals(0));
+        acc.deposit(100.50);
+        assertThat(acc.getBalance().equals(100.50));
     }
 }

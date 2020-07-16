@@ -8,7 +8,7 @@ public class Account {
     }
 
     public Double deposit(Double amount){
-        return amount;
+        return balance += amount;
     }
 
 
