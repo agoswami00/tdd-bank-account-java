@@ -16,7 +16,13 @@ public class AccountTest {
     @Test
     public void depositAnAmountToIncreaseTheBalance() {
         Account acc = new Account();
+        Double initialBalance = acc.getBalance();
         acc.deposit(100.50);
-        assertThat(acc.getBalance().equals(100.50));
+        Double finalBalance = acc.getBalance();
+
+        Double balanceIncrease = finalBalance - initialBalance;
+        assertThat(balanceIncrease.equals(100.50));
     }
+
+
 }
